@@ -25,6 +25,12 @@ Language can be switched from the header and is persisted locally in the browser
 
 ## Development
 
+Use nvm to match the project runtime:
+
+```bash
+nvm use
+```
+
 ```bash
 npm install
 npm run dev
