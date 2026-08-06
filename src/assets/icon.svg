@@ -1,0 +1,41 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" width="100%" height="100%">
+  <!-- Container Background: Dark Ink Blue -->
+  <rect width="512" height="512" rx="112" fill="#0B132B"/>
+
+  <!-- Logo Group -->
+  <g id="Planchette-Logo">
+    <!-- Subtle A4 Page Boundary (Dashed Inset Guide) -->
+    <rect x="156" y="114" width="200" height="284" rx="4" 
+          fill="none" 
+          stroke="#F8F5F0" 
+          stroke-width="3" 
+          stroke-dasharray="8 6" 
+          opacity="0.35"/>
+
+    <!-- Printer Crop & Margin Guides (Corner Marks) -->
+    <!-- Top-Left -->
+    <path d="M 132 114 H 146 M 156 90 V 104" stroke="#F8F5F0" stroke-width="4" stroke-linecap="round" opacity="0.6"/>
+    <!-- Top-Right -->
+    <path d="M 380 114 H 366 M 356 90 V 104" stroke="#F8F5F0" stroke-width="4" stroke-linecap="round" opacity="0.6"/>
+    <!-- Bottom-Left -->
+    <path d="M 132 398 H 146 M 156 422 V 408" stroke="#F8F5F0" stroke-width="4" stroke-linecap="round" opacity="0.6"/>
+    <!-- Bottom-Right -->
+    <path d="M 380 398 H 366 M 356 422 V 408" stroke="#F8F5F0" stroke-width="4" stroke-linecap="round" opacity="0.6"/>
+
+    <!-- Primary Motif: Monogram 'P' / Photo Frame Geometry -->
+    <!-- Solid 'P' Base -->
+    <path d="M 188 146 H 268 C 301 146 328 173 328 206 C 328 239 301 266 268 266 H 228 V 366 H 188 V 146 Z" 
+          fill="#F8F5F0"/>
+
+    <!-- Photo Cutout Inside 'P' Loop -->
+    <rect x="228" y="178" width="60" height="56" rx="3" fill="#0B132B"/>
+
+    <!-- Subtle Inset Photo Margin Guide -->
+    <rect x="234" y="184" width="48" height="44" rx="2" 
+          fill="none" 
+          stroke="#F8F5F0" 
+          stroke-width="2" 
+          stroke-dasharray="4 3" 
+          opacity="0.75"/>
+  </g>
+</svg>
