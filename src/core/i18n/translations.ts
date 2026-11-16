@@ -49,9 +49,11 @@ export type Messages = {
     summaryAria: string
     summary: {
       outputLabel: string
-      outputValue: string
+      outputPortrait: string
+      outputLandscape: string
       copiesLabel: string
-      copiesValue: string
+      copiesSingle: string
+      copiesPlural: string
       marginLabel: string
       compressionLabel: string
     }
@@ -63,6 +65,12 @@ export type Messages = {
     }
     layout: {
       legend: string
+      countLabel: string
+      countHint: string
+      orientationLabel: string
+      orientationHint: string
+      portrait: string
+      landscape: string
       marginLabel: string
       marginHint: string
       compressionLabel: string
@@ -86,11 +94,12 @@ export type Messages = {
       empty: string
       pageSizeLabel: string
       slotSizeLabel: string
+      gridLabel: string
     }
     output: {
       title: string
       placementLabel: string
-      placementValue: string
+      placementGrid: string
       backgroundLabel: string
       backgroundValue: string
       fitLabel: string
@@ -161,13 +170,15 @@ export const translations: Record<Locale, Messages> = {
       eyebrow: 'A6 to A4 PDF',
       title: 'Build a printable A4 sheet from one image.',
       intro:
-        'Upload one photo, adjust the page margin in millimeters, choose a compression preset, and download a browser-generated PDF with four repeated copies.',
+        'Upload one photo, choose how many copies fit on the sheet and the page orientation, adjust margins in millimeters, and download a browser-generated PDF.',
       summaryAria: 'Tool summary',
       summary: {
         outputLabel: 'Output',
-        outputValue: 'A4 portrait PDF',
+        outputPortrait: 'A4 portrait PDF',
+        outputLandscape: 'A4 landscape PDF',
         copiesLabel: 'Copies',
-        copiesValue: '4 repeated images',
+        copiesSingle: '1 image',
+        copiesPlural: '{count} repeated images',
         marginLabel: 'Margin',
         compressionLabel: 'Compression',
       },
@@ -179,6 +190,12 @@ export const translations: Record<Locale, Messages> = {
       },
       layout: {
         legend: 'Layout',
+        countLabel: 'Elements per page',
+        countHint: 'Any number from 1 up. The grid is guessed automatically.',
+        orientationLabel: 'Page orientation',
+        orientationHint: 'Every element stays in the same orientation for easy cutting.',
+        portrait: 'Portrait',
+        landscape: 'Landscape',
         marginLabel: 'Margin and spacing',
         marginHint:
           'The same value is used for the outer page margin and the gap between copies.',
@@ -208,15 +225,16 @@ export const translations: Record<Locale, Messages> = {
       },
       preview: {
         title: 'Live sheet preview',
-        text: 'The preview reflects the current margin layout and the processed source image.',
+        text: 'The preview reflects the current grid, orientation, margin layout, and processed source image.',
         empty: 'Add an image to preview the A4 sheet.',
         pageSizeLabel: 'Page size',
         slotSizeLabel: 'Slot size',
+        gridLabel: 'Grid',
       },
       output: {
         title: 'What this export does',
         placementLabel: 'Placement',
-        placementValue: '2 x 2 grid on one page',
+        placementGrid: '{cols} x {rows} grid on one page',
         backgroundLabel: 'Background',
         backgroundValue: 'White PDF page',
         fitLabel: 'Fit mode',
@@ -285,13 +303,15 @@ export const translations: Record<Locale, Messages> = {
       eyebrow: 'PDF A6 vers A4',
       title: 'Creez une planche A4 imprimable a partir d une image.',
       intro:
-        'Importez une photo, reglez la marge en millimetres, choisissez un niveau de compression, puis telechargez un PDF avec quatre copies.',
+        'Importez une photo, choisissez le nombre d elements par page et l orientation, reglez la marge en millimetres, puis telechargez le PDF.',
       summaryAria: 'Resume de l outil',
       summary: {
         outputLabel: 'Sortie',
-        outputValue: 'PDF A4 portrait',
+        outputPortrait: 'PDF A4 portrait',
+        outputLandscape: 'PDF A4 paysage',
         copiesLabel: 'Copies',
-        copiesValue: '4 images repetees',
+        copiesSingle: '1 image',
+        copiesPlural: '{count} images repetees',
         marginLabel: 'Marge',
         compressionLabel: 'Compression',
       },
@@ -303,6 +323,12 @@ export const translations: Record<Locale, Messages> = {
       },
       layout: {
         legend: 'Mise en page',
+        countLabel: 'Elements par page',
+        countHint: 'N importe quel nombre a partir de 1. La grille est deduite automatiquement.',
+        orientationLabel: 'Orientation de page',
+        orientationHint: 'Chaque element garde la meme orientation pour decouper facilement.',
+        portrait: 'Portrait',
+        landscape: 'Paysage',
         marginLabel: 'Marge et espacement',
         marginHint:
           'La meme valeur est utilisee pour la marge externe et l espace entre copies.',
@@ -332,15 +358,16 @@ export const translations: Record<Locale, Messages> = {
       },
       preview: {
         title: 'Apercu en direct',
-        text: 'L apercu suit la marge actuelle et l image preparee.',
+        text: 'L apercu suit la grille, l orientation, la marge et l image preparee.',
         empty: 'Ajoutez une image pour voir la planche A4.',
         pageSizeLabel: 'Taille page',
         slotSizeLabel: 'Taille case',
+        gridLabel: 'Grille',
       },
       output: {
         title: 'Ce que fait cet export',
         placementLabel: 'Placement',
-        placementValue: 'Grille 2 x 2 sur une page',
+        placementGrid: 'Grille {cols} x {rows} sur une page',
         backgroundLabel: 'Fond',
         backgroundValue: 'Page PDF blanche',
         fitLabel: 'Ajustement',
@@ -408,13 +435,15 @@ export const translations: Record<Locale, Messages> = {
       eyebrow: 'PDF A6 a A4',
       title: 'Crea una hoja A4 imprimible desde una imagen.',
       intro:
-        'Sube una foto, ajusta el margen en milimetros, elige una compresion y descarga un PDF generado en el navegador con cuatro copias.',
+        'Sube una foto, elige cuantos elementos van por pagina y la orientacion, ajusta el margen en milimetros y descarga el PDF.',
       summaryAria: 'Resumen de la herramienta',
       summary: {
         outputLabel: 'Salida',
-        outputValue: 'PDF A4 vertical',
+        outputPortrait: 'PDF A4 vertical',
+        outputLandscape: 'PDF A4 horizontal',
         copiesLabel: 'Copias',
-        copiesValue: '4 imagenes repetidas',
+        copiesSingle: '1 imagen',
+        copiesPlural: '{count} imagenes repetidas',
         marginLabel: 'Margen',
         compressionLabel: 'Compresion',
       },
@@ -426,6 +455,12 @@ export const translations: Record<Locale, Messages> = {
       },
       layout: {
         legend: 'Diseno',
+        countLabel: 'Elementos por pagina',
+        countHint: 'Cualquier numero desde 1. La cuadricula se calcula automaticamente.',
+        orientationLabel: 'Orientacion de pagina',
+        orientationHint: 'Cada elemento mantiene la misma orientacion para cortar facil.',
+        portrait: 'Vertical',
+        landscape: 'Horizontal',
         marginLabel: 'Margen y espacio',
         marginHint:
           'El mismo valor se usa para el margen exterior y el espacio entre copias.',
@@ -455,15 +490,16 @@ export const translations: Record<Locale, Messages> = {
       },
       preview: {
         title: 'Vista previa en vivo',
-        text: 'La vista refleja el margen actual y la imagen procesada.',
+        text: 'La vista refleja la cuadricula, la orientacion, el margen y la imagen procesada.',
         empty: 'Agrega una imagen para ver la hoja A4.',
         pageSizeLabel: 'Tamano de pagina',
         slotSizeLabel: 'Tamano de bloque',
+        gridLabel: 'Cuadricula',
       },
       output: {
         title: 'Que hace esta exportacion',
         placementLabel: 'Distribucion',
-        placementValue: 'Cuadricula 2 x 2 en una pagina',
+        placementGrid: 'Cuadricula {cols} x {rows} en una pagina',
         backgroundLabel: 'Fondo',
         backgroundValue: 'Pagina PDF blanca',
         fitLabel: 'Ajuste',
